@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<!-- 
+input:focus{box-shadow:0 0 0 4px rgba(30,155,74,0.06)}
+input.valid{ border-color:var(--ok); box-shadow:0 0 0 4px rgba(30,155,74,0.06); }
+input.invalid{ border-color:var(--bad); box-shadow:0 0 0 4px rgba(214,69,69,0.06); } -->
+<style>
+    /* input:focus{box-shadow:0 0 0 4px rgba(30,155,74,0.06)} */
+    .invalid-input{
+        border:2px solid red;
+    /* border-color:var(--bad); box-shadow:0 0 0 4px rgba(0, 248, 87, 0.06); */
+        
+    }
+
+    .valid-input{
+        /* border-color: #10b981; /* green */
+        /* box-shadow: 0 0 0 3px rgba(16,185,129,0.12); */ 
+         border:2px solid green;
+          /* box-shadow:0 0 0 4px rgba(0, 248, 87, 0.06); */
+    }
+    main{
+           
+  background:var(--card);
+
+  box-shadow:0 6px 20px rgba(20,20,30,0.06);
+    }
+    input{
+  display:block;
+  /* width:100%; */
+  padding:10px 38px 10px 10px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:15px;
+  outline:none;
+  transition:border-color .18s, box-shadoaw .18s;
+}
+</style>
+<body>
+    <main class="max-w-[720px] mx-auto p-[24px] rounded-[12px] mt-[25px] mb-[20px]">
+
+    <h1 class="text-[25px] text-center font-bold tracking-[1.5px]">Form validations </h1>
+
+    <form action=""  id="signup_form" >
+       
+<!-- username -->
+ <div class="flex sm:flex-col">
+        <label for="username" class="mb-[10px]">username </label>
+            
+            <input type="text" id="username" name="user" placeholder="e.g. user_123" class="mb-[10px]" required>
+            <div id="username-error"></div>
+       
+        </div>
+<!-- userpassword -->
+ <div class="flex sm:flex-col">
+        <label for="userpassword" class="mb-[10px]">
+            password</label>
+            <input type="password" name="pass" id="userpassword" placeholder="At least 8 chars, 1 upper, 1 digit, 1 special" class="mb-[10px]" required>
+            <div id="userpassword-error"></div>
+        
+</div>
+<!-- confirmpassword -->
+ <div class="flex sm:flex-col">
+  <label for="confirmpassword" class="mb-[10px]">
+    confirmpassword  </label>
+    <input type="password"  name="confirmpass" id="confirmpassword" placeholder="At least 8 chars, 1 upper, 1 digit, 1 special" class="mb-[10px]" required>
+     <div id="confirmpassword-error"></div>
+
+</div>
+
+
+
+
+<!-- useremail -->
+ <div class="flex sm:flex-col">
+<label for="useremail" class="mb-[10px]">
+email</label>
+<input type="email" name="mail" id="useremail" placeholder="you@example.com" required class="">
+<div id="useremail-error" class="mb-[10px]"></div>
+
+</div>
+
+
+
+<!-- userphoneno -->
+ <div class="flex sm:flex-col">
+ <label for="no" class="mb-[10px]">
+    phonenumber </label>
+    <input type="number" name="no" id="userphonenumber" placeholder="+919876543210 or 9876543210" class="mb-[10px]">
+    <div id="userphonenumber-error"></div>
+
+
+</div>
+
+
+<!-- submit -->
+<button type="submit" class="mt-[10px] bg-blue-500 text-white px-4 py-1 rounded">Submit</button>
+
+    </form>
+    </main>
+
+
+    <script src="./form.js"></script>
+</html>
